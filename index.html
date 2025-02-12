@@ -1,83 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>Carrusel de Laboratorios y Capacitaciones</title>
-  <!-- Vincula tu stylesheet -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel de Servicios</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <!-- Encabezado y Logo -->
-  <header>
+  <!-- HEADER CON LOGO Y LÍNEA -->
+  <header class="header">
     <img src="public/lictus-logo-1.png" alt="Logo Lictus" class="logo">
-    <hr>
+    <hr class="linea">
   </header>
 
-  <!-- Sección de Laboratorios -->
-  <section class="section-laboratorios">
-    <!-- Contenedor para el texto -->
-    <div class="text-container">
-      <!-- IDs para identificar dónde cambiar el texto con JS -->
-      <h2 id="titulo-pagina">Laboratorios</h2>
-      <p id="descripcion-pagina">
-        Aquí va tu texto descriptivo inicial...
-      </p>
-      <button class="btn-iniciar">Iniciar sesión</button>
+  <!-- SECCIÓN QUE CAMBIA SEGÚN EL CARRUSEL -->
+  <section class="section-contenido"> <!-- ANTES: section-laboratorios -->
+    <div class="container">
+      <div class="left">
+        <h2 id="titulo-pagina">Laboratorios</h2>
+      </div>
+      <div class="right">
+        <p id="descripcion-pagina">Aquí va tu texto descriptivo inicial...</p>
+        <button class="btn-iniciar">Iniciar sesión</button>
+      </div>
     </div>
 
-    <!-- Contenedor principal del carrusel -->
+    <!-- CARRUSEL -->
     <div class="carousel">
       <button class="carousel-btn prev-btn">&#10094;</button>
-      
       <div class="carousel-container">
-        <!-- Ítems del carrusel -->
         <div class="carousel-item">
-          <img src="public/instalaciones_gas.png" alt="Laboratorio de instalaciones de gas">
+          <img src="public/laboratorio_ambiente_laboral.png" alt="Laboratorio de ambiente laboral">
           <div class="card-info">
-            <h3>Laboratorio de instalaciones de gas</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Laboratorio de ambiente laboral</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
-
         <div class="carousel-item">
-          <img src="public/recipientes.png" alt="Laboratorio de recipientes">
+          <img src="public/analisis_agua.png" alt="Laboratorio de análisis de aguas">
           <div class="card-info">
-            <h3>Laboratorio de recipientes</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Laboratorio de análisis de aguas</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
-
         <div class="carousel-item">
-          <img src="public/inspeccion_electrica.png" alt="Laboratorio de inspección eléctrica">
+          <img src="public/fuentes_fijas.png" alt="Laboratorio de fuentes fijas">
           <div class="card-info">
-            <h3>Laboratorio de inspección eléctrica</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Laboratorio de fuentes fijas</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
-
-        <!-- Más tarjetas para completar 2 "páginas" de 3 cada una -->
         <div class="carousel-item">
-          <img src="public/otro1.png" alt="Otro laboratorio 1">
+          <img src="public/norma_seguridad.png" alt="Normas de seguridad">
           <div class="card-info">
-            <h3>Laboratorio adicional 1</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Normas de seguridad</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
-
         <div class="carousel-item">
-          <img src="public/otro2.png" alt="Otro laboratorio 2">
+          <img src="public/norma_salud.png" alt="Normas de salud">
           <div class="card-info">
-            <h3>Laboratorio adicional 2</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Normas de salud</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
-
         <div class="carousel-item">
-          <img src="public/otro3.png" alt="Otro laboratorio 3">
+          <img src="public/norma_organizacion.png" alt="Normas de Organización">
           <div class="card-info">
-            <h3>Laboratorio adicional 3</h3>
-            <a href="#">Ver más ↗</a>
+            <h3>Normas de Organización</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/inspeccion_electrica.png" alt="Inspección eléctrica">
+          <div class="card-info">
+            <h3>Inspección eléctrica</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/instalaciones_gas.png" alt="Instalaciones de Gas y LP">
+          <div class="card-info">
+            <h3>Instalaciones de Gas y LP</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/recipientes.png" alt="Recipientes sujetos a presión, calderas y criogénicos">
+          <div class="card-info">
+            <h3>Recipientes sujetos a presión, calderas y criogénicos</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/consultoria iso.png" alt="Consultoría en certificación">
+          <div class="card-info">
+            <h3>Consultoría en certificación ISO 9001, ISO 14001, ISO 45001 y ISO 50001</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/auditoria_interna.png" alt="Auditoría interna de certificación">
+          <div class="card-info">
+            <h3>Auditoría interna de certificación</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/auditoria_proveedores.png" alt="Auditoría a proveedores">
+          <div class="card-info">
+            <h3>Auditoría a proveedores</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/programas_pc.png" alt="Elaboración de programas de protección civil">
+          <div class="card-info">
+            <h3>Elaboración de programas de protección civil</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/planeacion_simulacros.png" alt="Planeación y evaluación de simulacros">
+          <div class="card-info">
+            <h3>Planeación y evaluación de simulacros</h3><a href="#">Ver más ↗</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="public/capacitacion_brigadas.png" alt=" Capacitación y creación de brigadas">
+          <div class="card-info">
+            <h3>Capacitación y creación de brigadas</h3><a href="#">Ver más ↗</a>
           </div>
         </div>
       </div>
@@ -86,7 +128,7 @@
     </div>
   </section>
 
-  <!-- Script al final para que el DOM exista cuando se ejecute -->
   <script src="script.js"></script>
 </body>
+
 </html>
