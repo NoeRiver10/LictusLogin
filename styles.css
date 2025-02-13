@@ -9,16 +9,18 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  padding: 2rem 0;
 }
 
 /* ------------- HEADER ------------- */
 .header {
   display: flex;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background-color: #fff;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 5%;
   max-width: 1400px;
   margin: 0 auto;
+  gap: 1rem;
 }
 
 .logo {
@@ -26,54 +28,46 @@ body {
 }
 
 .linea {
-  flex-grow: 1;
-  height: 1px;
+  height: 5px;
+  width: 100%;
+  max-width: 200px !important;
   background-color: #333;
-  margin-left: 1.5rem;
   max-width: 100%;
 }
 
 /* ------------- SECCIÓN DE CONTENIDO ------------- */
 .section-contenido {
-  background-color: #fff;
   padding: 3rem 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Contenedor principal con título y descripción alineados */
 .container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  min-height: 180px;
 }
 
-/* Estilo del título */
-.left h2 {
+.container .left h2 {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: left;
   margin-bottom: 1rem;
 }
 
-/* Estilo de la descripción */
-.right {
-  max-width: 600px;
-  text-align: left;
-}
-
-.right p {
+.container .right p {
   font-size: 1.2rem;
   line-height: 1.5;
   color: #333;
+  text-align: left;
 }
+
 
 .btn-iniciar {
   background-color: #b51c2d;
   color: #fff;
-  padding: 1rem 1.8rem;
+  padding: 1rem 4rem;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -86,7 +80,6 @@ body {
 .carousel {
   position: relative;
   overflow: hidden;
-  max-width: 1200px;
   margin: 2rem auto 0 auto;
   display: flex;
   justify-content: center;
@@ -138,6 +131,7 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
+  gap: 1rem;
 }
 
 /* Tarjetas del carrusel */
@@ -146,14 +140,13 @@ body {
   max-width: calc(100% / 3);
   height: auto;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 3px;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 /* Imágenes de las tarjetas */
@@ -166,7 +159,7 @@ body {
 
 /* Información dentro de la tarjeta */
 .card-info {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .card-info h3 {
@@ -185,17 +178,7 @@ body {
 /* ------------- RESPONSIVE ------------- */
 @media (max-width: 1024px) {
   .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .left h2 {
-    text-align: center;
-  }
-
-  .right {
-    text-align: center;
-    max-width: 90%;
+    grid-template-columns: 1fr;
   }
 
   .carousel-container {
