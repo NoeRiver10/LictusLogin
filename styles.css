@@ -76,7 +76,11 @@ body {
 
 /* ------------- CARRUSEL MEJORADO ------------- */
 .carousel {
-  
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  overflow: hidden;
 }
 
 /* Botones del carrusel */
@@ -129,8 +133,8 @@ body {
 
 /* Tarjetas del carrusel */
 .carousel-item {
-  flex: 0 0 calc(100% / 3);
-  max-width: calc(100% / 3);
+  flex: 0 0 calc((100% - 2rem) / 3);
+  max-width: calc((100% - 2rem) / 3);
   height: auto;
   background-color: #fff;
   border-radius: 3px;
@@ -179,7 +183,8 @@ body {
   }
 
   .carousel-item {
-    flex: 0 0 calc(100% / 2);
+    flex: 0 0 calc((100% - 1rem) / 2);
+    max-width: calc((100% - 1rem) / 2);
   }
 
   .prev-btn, .next-btn {

@@ -53,17 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCarousel() {
     let cardWidth = getCardWidth();
-    let slideDistance = cardWidth * itemsToShow;
+    let gapWidth = 16; // 1rem = 16px
+    let slideDistance = (cardWidth + gapWidth) * itemsToShow;
     let maxPages = getMaxPages();
 
     if (currentPage < 0) currentPage = 0;
     if (currentPage >= maxPages) currentPage = maxPages - 1;
 
     let moveAmount = currentPage * slideDistance;
-
-    // 🛠 Asegurar que no se ocultan las imágenes
     container.style.transform = `translateX(-${moveAmount}px)`;
-    container.style.transition = "transform 0.5s ease-in-out"; 
+    container.style.transition = "transform 0.5s ease-in-out";
 
     // Actualizar textos
     tituloPagina.textContent = pageTitles[currentPage] || "Sección";
