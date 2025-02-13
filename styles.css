@@ -36,17 +36,15 @@ body {
 }
 
 /* ------------- SECCIÓN DE CONTENIDO ------------- */
-.section-contenido {
-  padding: 3rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
-  min-height: 180px;
+  min-height: 200px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 5%;
 }
 
 .container .left h2 {
@@ -78,12 +76,7 @@ body {
 
 /* ------------- CARRUSEL MEJORADO ------------- */
 .carousel {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 /* Botones del carrusel */
@@ -129,7 +122,7 @@ body {
   transition: transform 0.5s ease-in-out;
   justify-content: flex-start;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
   gap: 1rem;
 }
