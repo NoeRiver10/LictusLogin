@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lictus Login</title>
+  <title>Lictus</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -24,160 +24,182 @@
         <h2 id="titulo-pagina">Laboratorios</h2>
       </div>
       <div class="right">
-        <p id="descripcion-pagina">Aquí va tu texto descriptivo inicial...</p>
-        <button class="btn-iniciar">Iniciar sesión</button>
+        <p id="descripcion-pagina">TEXTO INICIAL</p>
+        <button class="btn-iniciar" id="btn-iniciar-sesion">Iniciar sesión</button>
       </div>
     </div>
 
     <!-- CARRUSEL -->
-    <div class="carousel">
-      <button class="carousel-btn prev-btn">
-        <img class="carousel-btn-icon" src="public/arrow-left.svg" alt="Flecha izquierda">
+    <div class="carrusel">
+      <button class="carrusel-btn prev-btn">
+        <img class="carrusel-btn-icon" src="public/arrow-left.svg" alt="Flecha izquierda">
       </button>
       
-      <div class="carousel-container">
-        <div class="carousel-item">
+      <div class="carrusel-container">
+        <div class="item-carrusel">
           <img src="public/laboratorio_ambiente_laboral.png" alt="Laboratorio de ambiente laboral">
           <div class="card-info">
             <h3>Laboratorio de ambiente laboral</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/laboratorio-de-ambiente-laboral-en-mexico/" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/analisis_agua.png" alt="Laboratorio de análisis de aguas">
           <div class="card-info">
             <h3>Laboratorio de análisis de aguas</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/laboratorio-de-analisis-de-aguas-en-mexico/" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/fuentes_fijas.png" alt="Laboratorio de fuentes fijas">
           <div class="card-info">
             <h3>Laboratorio de fuentes fijas</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/laboratorio-de-fuentes-fijas-en-mexico/" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/norma_seguridad.png" alt="Normas de seguridad">
           <div class="card-info">
             <h3>Normas de seguridad</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/capacitacion/#normas-seguridad" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/norma_salud.png" alt="Normas de salud">
           <div class="card-info">
             <h3>Normas de salud</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/capacitacion/#normas-salud" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/norma_organizacion.png" alt="Normas de Organización">
           <div class="card-info">
             <h3>Normas de Organización</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/capacitacion/#normas-organizacion" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/inspeccion_electrica.png" alt="Inspección eléctrica">
           <div class="card-info">
             <h3>Inspección eléctrica</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/unidad-de-tecnicos-de-inspeccion-en-seguridad-industrial/#instalaciones-electricas" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/instalaciones_gas.png" alt="Instalaciones de Gas y LP">
           <div class="card-info">
             <h3>Instalaciones de Gas y LP</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/unidad-de-tecnicos-de-inspeccion-en-seguridad-industrial/#gas" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/recipientes.png" alt="Recipientes sujetos a presión, calderas y criogénicos">
           <div class="card-info">
             <h3>Recipientes sujetos a presión, calderas y criogénicos</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/unidad-de-tecnicos-de-inspeccion-en-seguridad-industrial/#presion" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/consultoria iso.png" alt="Consultoría en certificación">
           <div class="card-info">
             <h3>Consultoría en certificación ISO 9001, ISO 14001, ISO 45001 y ISO 50001</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/organismos-de-certificacion/" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/auditoria_interna.png" alt="Auditoría interna de certificación">
           <div class="card-info">
             <h3>Auditoría interna de certificación</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/organismos-de-certificacion/#auditoria-interna" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/auditoria_proveedores.png" alt="Auditoría a proveedores">
           <div class="card-info">
             <h3>Auditoría a proveedores</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/organismos-de-certificacion/#auditoria-proveedores" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/programas_pc.png" alt="Elaboración de programas de protección civil">
           <div class="card-info">
             <h3>Elaboración de programas de protección civil</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/programa-de-proteccion-civil/#prevencion-riesgos" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/planeacion_simulacros.png" alt="Planeación y evaluación de simulacros">
           <div class="card-info">
             <h3>Planeación y evaluación de simulacros</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/programa-de-proteccion-civil/#evaluacion-simulacros" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="item-carrusel">
           <img src="public/capacitacion_brigadas.png" alt=" Capacitación y creación de brigadas">
           <div class="card-info">
             <h3>Capacitación y creación de brigadas</h3>
-            <a href="#" class="btn-ver-mas">
+            <a href="https://lictus.com.mx/programa-de-proteccion-civil/#creacion-brigadas" class="btn-ver-mas">
               Ver más <img class="flecha-ver-mas" src="public/arrow-up-right.svg" alt="Flecha derecha">
             </a>
           </div>
         </div>
       </div>
 
-      <button class="carousel-btn next-btn">
-        <img class="carousel-btn-icon" src="public/arrow-right.svg" alt="Flecha derecha">
+      <button class="carrusel-btn next-btn">
+        <img class="carrusel-btn-icon" src="public/arrow-right.svg" alt="Flecha derecha">
       </button>
     </div>
   </section>
+
+  <!--AQUÍ TERMINA EL DIV DEL CARRUSEL-->
+  
+  <!-- LOGIN (OCULTO AL INICIO) -->
+      <div id="login" style="display: none; width: 300px; padding: 20px; background-color: white; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); border-radius: 5px; margin: 50px auto; text-align: left;">
+
+        <label for="email" style="display: block; font-size: 14px; margin-bottom: 5px;">Email</label>
+        <input type="text" id="email" placeholder="Email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 15px;">
+
+        <label for="password" style="display: block; font-size: 14px; margin-bottom: 5px;">Contraseña</label>
+        <input type="password" id="password" placeholder="Email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 20px;">
+
+        <button style="width: 100%; padding: 12px; background-color: #b51c2d; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Iniciar sesión
+        </button>
+
+        <p id="btn-regresar" style="cursor: pointer; text-align: left; margin-top: 20px; font-size: 14px; color: #b51c2d">
+            <img src="public/icono_regresar.png" alt="Regresar" style="width: 20px; vertical-align: middle;"> Regresar
+        </p>
+    </div>
+    <!--TERMINA LOGIN-->
+
 
   <script src="script.js"></script>
 </body>

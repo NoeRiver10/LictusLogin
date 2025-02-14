@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------
   // 1. REFERENCIAS AL CARRUSEL
   // ---------------------------
-  const carousel = document.querySelector('.carousel');
-  if (!carousel) return;
-  const container = carousel.querySelector('.carousel-container');
-  const prevBtn = carousel.querySelector('.prev-btn');
-  const nextBtn = carousel.querySelector('.next-btn');
+  const carrusel = document.querySelector('.carrusel');
+  if (!carrusel) return;
+  const container = carrusel.querySelector('.carrusel-container');
+  const prevBtn = carrusel.querySelector('.prev-btn');
+  const nextBtn = carrusel.querySelector('.next-btn');
 
   // ---------------------------
   // 2. REFERENCIAS A TEXTOS
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const itemsToShow = 3;
 
   function getCardWidth() {
-    return container.querySelector('.carousel-item').offsetWidth;
+    return container.querySelector('.item-carrusel').offsetWidth;
   }
 
   function getTotalItems() {
-    return container.querySelectorAll('.carousel-item').length;
+    return container.querySelectorAll('.item-carrusel').length;
   }
 
   function getMaxPages() {
@@ -82,6 +82,25 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
   });
 
+
+// FUNCIÓN PARA MOSTRAR EL LOGIN
+    document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
+        document.querySelectorAll(".carrusel, .container").forEach(div => {
+            div.style.display = "none"; // Oculta cada div con estas clases
+        });
+        document.getElementById("login").style.display = "block"; // Muestra el formulario
+    });
+
+
+//FUNCIÓN PARA EL BOTÓN DE REGRESAR
+    document.getElementById("btn-regresar").addEventListener("click", function () {
+        document.querySelectorAll(".carrusel, .container").forEach(div => {
+            div.style.display = "block"; // Oculta cada div con estas clases
+        });
+        document.getElementById("login").style.display = "none"; // Muestra el formulario
+    });
+
+
   // ---------------------------
   // 6. AJUSTE DINÁMICO AL REDIMENSIONAR
   // ---------------------------
@@ -91,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. CORRECCIÓN DE VISIBILIDAD
   // ---------------------------
   function fixVisibility() {
-    container.style.display = "flex";  // 🛠 Asegura que las tarjetas sean visibles
+    container.style.display = "flex";  // Asegura que las tarjetas sean visibles
     container.style.overflow = "visible";
   }
 
