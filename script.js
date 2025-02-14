@@ -84,22 +84,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // FUNCIÓN PARA MOSTRAR EL LOGIN
-    document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
-        document.querySelectorAll(".carrusel, .container").forEach(div => {
-            div.style.display = "none"; // Oculta cada div con estas clases
-        });
-        document.getElementById("login").style.display = "block"; // Muestra el formulario
-    });
-
+document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
+    const container = document.querySelector(".container");
+    const carrusel = document.querySelector(".carrusel");
+    
+    // Store original display values
+    container.dataset.originalDisplay = window.getComputedStyle(container).display;
+    carrusel.dataset.originalDisplay = window.getComputedStyle(carrusel).display;
+    
+    container.style.display = "none";
+    carrusel.style.display = "none";
+    document.getElementById("login").style.display = "block";
+});
 
 //FUNCIÓN PARA EL BOTÓN DE REGRESAR
-    document.getElementById("btn-regresar").addEventListener("click", function () {
-        document.querySelectorAll(".carrusel, .container").forEach(div => {
-            div.style.display = "block"; // Oculta cada div con estas clases
-        });
-        document.getElementById("login").style.display = "none"; // Muestra el formulario
-    });
-
+document.getElementById("btn-regresar").addEventListener("click", function () {
+    const container = document.querySelector(".container");
+    const carrusel = document.querySelector(".carrusel");
+    
+    // Restore original display values
+    container.style.display = container.dataset.originalDisplay || "grid";
+    carrusel.style.display = carrusel.dataset.originalDisplay || "block";
+    document.getElementById("login").style.display = "none";
+});
 
   // ---------------------------
   // 6. AJUSTE DINÁMICO AL REDIMENSIONAR
