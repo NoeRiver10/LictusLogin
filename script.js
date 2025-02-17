@@ -123,4 +123,20 @@ document.getElementById("btn-regresar").addEventListener("click", function () {
 
   fixVisibility();
   updateCarousel();
+
+  // Agregar evento de click al logo
+  document.getElementById("logo-link").addEventListener("click", function(e) {
+    e.preventDefault(); // Evitar comportamiento por defecto del enlace
+    const container = document.querySelector(".container");
+    const carrusel = document.querySelector(".carrusel");
+    const loginSection = document.getElementById("login");
+    
+    // Si el login está visible, regresar a la vista principal
+    if (loginSection.style.display === "block") {
+      // Restaurar valores originales de display
+      container.style.display = container.dataset.originalDisplay || "grid";
+      carrusel.style.display = carrusel.dataset.originalDisplay || "block";
+      loginSection.style.display = "none";
+    }
+  });
 });
