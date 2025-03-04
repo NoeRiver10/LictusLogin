@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------
-  // 5. EVENTOS DE BOTONES
+  // 5. EVENTOS DE BOTONES DEL CARRUSEL
   // ---------------------------
   prevBtn.addEventListener('click', () => {
     currentPage--;
@@ -82,39 +82,55 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
   });
 
-
-// FUNCIÓN PARA MOSTRAR EL LOGIN
-document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
+  // ---------------------------
+  // 6. FUNCIÓN PARA MOSTRAR EL LOGIN
+  // ---------------------------
+  document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
     const container = document.querySelector(".container");
     const carrusel = document.querySelector(".carrusel");
-    
-    // Store original display values
+
+    // Guardar valores originales de display
     container.dataset.originalDisplay = window.getComputedStyle(container).display;
     carrusel.dataset.originalDisplay = window.getComputedStyle(carrusel).display;
-    
+
     container.style.display = "none";
     carrusel.style.display = "none";
     document.getElementById("login").style.display = "block";
-});
+  });
 
-//FUNCIÓN PARA EL BOTÓN DE REGRESAR
-document.getElementById("btn-regresar").addEventListener("click", function () {
+  // ---------------------------
+  // 7. FUNCIÓN PARA EL BOTÓN DE REGRESAR
+  // ---------------------------
+  document.getElementById("btn-regresar").addEventListener("click", function () {
     const container = document.querySelector(".container");
     const carrusel = document.querySelector(".carrusel");
-    
-    // Restore original display values
+
+    // Restaurar valores originales de display
     container.style.display = container.dataset.originalDisplay || "grid";
     carrusel.style.display = carrusel.dataset.originalDisplay || "block";
     document.getElementById("login").style.display = "none";
-});
+  });
 
   // ---------------------------
-  // 6. AJUSTE DINÁMICO AL REDIMENSIONAR
+  // 8. FUNCIÓN PARA SOLICITAR ACCESO
+  // ---------------------------
+  document.getElementById("btn-solicitar").addEventListener("click", function () {
+    // Simular una solicitud de acceso con un mensaje emergente
+    alert("🔐 ¡Solicitud de acceso enviada!\n\nTu solicitud ha sido registrada. Pronto recibirás una respuesta.");
+
+    // Alternativamente, podemos hacer una animación o cambiar el texto
+    this.textContent = "Solicitud Enviada ✔️";
+    this.style.color = "#28a745"; // Cambia a color verde para indicar éxito
+    this.style.fontWeight = "bold"; // Hace el texto más notorio
+  });
+
+  // ---------------------------
+  // 9. AJUSTE DINÁMICO AL REDIMENSIONAR
   // ---------------------------
   window.addEventListener("resize", updateCarousel);
 
   // ---------------------------
-  // 7. CORRECCIÓN DE VISIBILIDAD
+  // 10. CORRECCIÓN DE VISIBILIDAD DEL CARRUSEL
   // ---------------------------
   function fixVisibility() {
     container.style.display = "flex";  // Asegura que las tarjetas sean visibles
@@ -124,16 +140,17 @@ document.getElementById("btn-regresar").addEventListener("click", function () {
   fixVisibility();
   updateCarousel();
 
-  // Agregar evento de click al logo
+  // ---------------------------
+  // 11. EVENTO AL LOGO PARA REGRESAR AL INICIO
+  // ---------------------------
   document.getElementById("logo-link").addEventListener("click", function(e) {
     e.preventDefault(); // Evitar comportamiento por defecto del enlace
     const container = document.querySelector(".container");
     const carrusel = document.querySelector(".carrusel");
     const loginSection = document.getElementById("login");
-    
+
     // Si el login está visible, regresar a la vista principal
     if (loginSection.style.display === "block") {
-      // Restaurar valores originales de display
       container.style.display = container.dataset.originalDisplay || "grid";
       carrusel.style.display = carrusel.dataset.originalDisplay || "block";
       loginSection.style.display = "none";
