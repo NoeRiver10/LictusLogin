@@ -1,18 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // ---------------------------
   // 1. REFERENCIAS AL CARRUSEL
   // ---------------------------
-  const carrusel = document.querySelector('.carrusel');
+  const carrusel = document.querySelector(".carrusel");
   if (!carrusel) return;
-  const container = carrusel.querySelector('.carrusel-container');
-  const prevBtn = carrusel.querySelector('.prev-btn');
-  const nextBtn = carrusel.querySelector('.next-btn');
+  const container = carrusel.querySelector(".carrusel-container");
+  const prevBtn = carrusel.querySelector(".prev-btn");
+  const nextBtn = carrusel.querySelector(".next-btn");
 
   // ---------------------------
   // 2. REFERENCIAS A TEXTOS
   // ---------------------------
-  const tituloPagina = document.getElementById('titulo-pagina');
-  const descripcionPagina = document.getElementById('descripcion-pagina');
+  const tituloPagina = document.getElementById("titulo-pagina");
+  const descripcionPagina = document.getElementById("descripcion-pagina");
 
   // ---------------------------
   // 3. TEXTOS SEGÚN "PÁGINA"
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Capacitaciones",
     "Unidades de Inspección",
     "Certificaciones",
-    "Protección Civil"
+    "Protección Civil",
   ];
 
   const pageDescriptions = [
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Lictus ofrece gran variedad de entrenamientos y capacitaciones de personal sobre Normativa STPS.",
     "En Lictus ofrecemos un enfoque de inspección integral y altamente eficiente que asegura la seguridad y el cumplimiento normativo en su lugar de trabajo.",
     "En LICTUS, ofrecemos servicios especializados en Organismos de Certificación en México para respaldar a su empresa en la obtención y mantenimiento de certificaciones en diversas normas internacionales.",
-    "Priorizamos la gestión de emergencias en el ámbito empresarial, con programas para atender las exigencias de seguridad, medio ambiente y protección civil de nuestros clientes."
+    "Priorizamos la gestión de emergencias en el ámbito empresarial, con programas para atender las exigencias de seguridad, medio ambiente y protección civil de nuestros clientes.",
   ];
 
   // ---------------------------
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const itemsToShow = 3;
 
   function getCardWidth() {
-    return container.querySelector('.item-carrusel').offsetWidth;
+    return container.querySelector(".item-carrusel").offsetWidth;
   }
 
   function getTotalItems() {
-    return container.querySelectorAll('.item-carrusel').length;
+    return container.querySelectorAll(".item-carrusel").length;
   }
 
   function getMaxPages() {
@@ -70,80 +70,88 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------
-  // 5. EVENTOS DE BOTONES DEL CARRUSEL
+  // 5. EVENTOS DE BOTONES
   // ---------------------------
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener("click", () => {
     currentPage--;
     updateCarousel();
   });
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener("click", () => {
     currentPage++;
     updateCarousel();
   });
-
-  // ---------------------------
-  // 6. FUNCIÓN PARA MOSTRAR EL LOGIN
-  // ---------------------------
-  document.getElementById("btn-iniciar-sesion").addEventListener("click", function () {
+  function regresarAlCarrusel() {
     const container = document.querySelector(".container");
     const carrusel = document.querySelector(".carrusel");
 
-    // Guardar valores originales de display
-    container.dataset.originalDisplay = window.getComputedStyle(container).display;
-    carrusel.dataset.originalDisplay = window.getComputedStyle(carrusel).display;
-
-    container.style.display = "none";
-    carrusel.style.display = "none";
-    document.getElementById("login").style.display = "block";
-  });
-
-  // ---------------------------
-  // 7. FUNCIÓN PARA EL BOTÓN DE REGRESAR
-  // ---------------------------
-  document.getElementById("btn-regresar").addEventListener("click", function () {
-    const container = document.querySelector(".container");
-    const carrusel = document.querySelector(".carrusel");
-
-    // Restaurar valores originales de display
     container.style.display = container.dataset.originalDisplay || "grid";
     carrusel.style.display = carrusel.dataset.originalDisplay || "block";
     document.getElementById("login").style.display = "none";
-  });
+    document.getElementById("form-solicitar-acceso").style.display = "none";
+  }
 
-  // ---------------------------
-  // 8. FUNCIÓN PARA SOLICITAR ACCESO
-  // ---------------------------
+  document.getElementById("btn-regresar").addEventListener("click", regresarAlCarrusel);
+  document.getElementById("cerrar-formulario").addEventListener("click", regresarAlCarrusel);
+  document.getElementById("logo-link").addEventListener("click", regresarAlCarrusel);
+
+  // FUNCIÓN PARA MOSTRAR Y OCULTAR EL FORMULARIO "SOLICITAR ACCESO"
   document.getElementById("btn-solicitar").addEventListener("click", function () {
-    // Simular una solicitud de acceso con un mensaje emergente
-    alert("🔐 ¡Solicitud de acceso enviada!\n\nTu solicitud ha sido registrada. Pronto recibirás una respuesta.");
-
-    // Alternativamente, podemos hacer una animación o cambiar el texto
-    this.textContent = "Solicitud Enviada ✔️";
-    this.style.color = "#28a745"; // Cambia a color verde para indicar éxito
-    this.style.fontWeight = "bold"; // Hace el texto más notorio
+    document.getElementById("login").style.display = "none";
+    document.getElementById("form-solicitar-acceso").style.display = "block";
   });
 
+  document.getElementById("cerrar-formulario").addEventListener("click", regresarAlCarrusel);
+
+  // FUNCIÓN PARA MOSTRAR EL LOGIN
+  document
+    .getElementById("btn-iniciar-sesion")
+    .addEventListener("click", function () {
+      const container = document.querySelector(".container");
+      const carrusel = document.querySelector(".carrusel");
+
+      // Store original display values
+      container.dataset.originalDisplay =
+        window.getComputedStyle(container).display;
+      carrusel.dataset.originalDisplay =
+        window.getComputedStyle(carrusel).display;
+
+      container.style.display = "none";
+      carrusel.style.display = "none";
+      document.getElementById("login").style.display = "block";
+    });
+
+  //FUNCIÓN PARA EL BOTÓN DE REGRESAR
+  document
+    .getElementById("btn-regresar")
+    .addEventListener("click", function () {
+      const container = document.querySelector(".container");
+      const carrusel = document.querySelector(".carrusel");
+
+      // Restore original display values
+      container.style.display = container.dataset.originalDisplay || "grid";
+      carrusel.style.display = carrusel.dataset.originalDisplay || "block";
+      document.getElementById("login").style.display = "none";
+    });
+
   // ---------------------------
-  // 9. AJUSTE DINÁMICO AL REDIMENSIONAR
+  // 6. AJUSTE DINÁMICO AL REDIMENSIONAR
   // ---------------------------
   window.addEventListener("resize", updateCarousel);
 
   // ---------------------------
-  // 10. CORRECCIÓN DE VISIBILIDAD DEL CARRUSEL
+  // 7. CORRECCIÓN DE VISIBILIDAD
   // ---------------------------
   function fixVisibility() {
-    container.style.display = "flex";  // Asegura que las tarjetas sean visibles
+    container.style.display = "flex"; // Asegura que las tarjetas sean visibles
     container.style.overflow = "visible";
   }
 
   fixVisibility();
   updateCarousel();
 
-  // ---------------------------
-  // 11. EVENTO AL LOGO PARA REGRESAR AL INICIO
-  // ---------------------------
-  document.getElementById("logo-link").addEventListener("click", function(e) {
+  // Agregar evento de click al logo
+  document.getElementById("logo-link").addEventListener("click", function (e) {
     e.preventDefault(); // Evitar comportamiento por defecto del enlace
     const container = document.querySelector(".container");
     const carrusel = document.querySelector(".carrusel");
@@ -151,9 +159,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Si el login está visible, regresar a la vista principal
     if (loginSection.style.display === "block") {
+      // Restaurar valores originales de display
       container.style.display = container.dataset.originalDisplay || "grid";
       carrusel.style.display = carrusel.dataset.originalDisplay || "block";
       loginSection.style.display = "none";
     }
   });
-});
+    // FUNCIÓN PARA MOSTRAR Y OCULTAR EL FORMULARIO "SOLICITAR ACCESO"
+    document.getElementById("btn-solicitar").addEventListener("click", function () {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("form-solicitar-acceso").style.display = "block";
+    });
+  
+    document.getElementById("cerrar-formulario").addEventListener("click", function () {
+      document.getElementById("form-solicitar-acceso").style.display = "none";
+    });
+    
+  
+    // FUNCIÓN DE ENVÍO DEL FORMULARIO MEJORADA
+  document.getElementById("enviar-solicitud").addEventListener("click", function () {
+    const razonSocial = document.getElementById("razon-social").value.trim();
+    const nombre = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const email = document.getElementById("email-solicitud").value.trim();
+
+    if (!razonSocial || !nombre || !email) {
+      alert("Por favor, completa todos los campos antes de enviar.");
+      return;
+    }
+
+    alert("Solicitud enviada correctamente. Nos pondremos en contacto contigo.");
+    
+     // **Nuevo: Reiniciar el formulario**
+     document.querySelectorAll("#form-solicitar-acceso input").forEach(input => input.value = "");
+     
+    // **Nuevo: Esperar la confirmación del usuario y regresar al carrusel**
+    setTimeout(() => {
+      regresarAlCarrusel();
+    }, 200); // Se da un pequeño tiempo para que el alert se cierre antes de ejecutar
+  });
+  
+    window.addEventListener("resize", updateCarousel);
+    fixVisibility();
+    updateCarousel();
+  });
