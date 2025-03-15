@@ -241,6 +241,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 200); // Se da un pequeño tiempo para que el alert se cierre antes de ejecutar
     });
 
+    // Evento para "¿Olvidaste tu contraseña?"
+    document.getElementById("forgot-password").addEventListener("click", function () {
+      alert("Por favor, contacta con soporte para recuperar tu contraseña.");
+    });
+    // Datos simulados de usuario
+  const usuarioValido = {
+    email: "usuario@lictus.com",
+    password: "123456",
+  };
+
+  // Evento para iniciar sesión
+  document.getElementById("login").querySelector("button").addEventListener("click", function () {
+    const emailInput = document.getElementById("email").value.trim();
+    const passwordInput = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("error-message"); // Referencia al mensaje de error
+
+    if (emailInput === usuarioValido.email && passwordInput === usuarioValido.password) {
+      errorMessage.style.display = "none"; // Ocultar mensaje de error si ya estaba visible
+
+      // Simular inicio de sesión exitoso
+      alert("Inicio de sesión exitoso. ¡Bienvenido!");
+      
+      // Ocultar el login y regresar al carrusel
+      regresarAlCarrusel();
+
+      // Guardar sesión simulada en localStorage
+      localStorage.setItem("usuarioLogueado", "true");
+
+    } else {
+      // Mostrar mensaje de error
+      errorMessage.style.display = "block";
+      errorMessage.textContent = "Usuario o contraseña incorrecto.";
+    }
+  });
+
+  // Al cargar la página, verificar si ya está logueado
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("usuarioLogueado") === "true") {
+      alert("Ya tienes una sesión activa.");
+      regresarAlCarrusel();
+    }
+  });
+
   window.addEventListener("resize", updateCarousel);
   fixVisibility();
   updateCarousel();
