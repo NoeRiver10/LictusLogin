@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Evento para "¿Olvidaste tu contraseña?"
     document.getElementById("forgot-password").addEventListener("click", function () {
-      alert("Por favor, contacta con soporte para recuperar tu contraseña.");
+      alert("Se ha enviado un correo para reestablecer tu contraseña.");
     });
     // Datos simulados de usuario
   const usuarioValido = {
