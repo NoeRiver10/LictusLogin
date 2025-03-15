@@ -91,17 +91,27 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("form-solicitar-acceso").style.display = "none";
   }
 
-  document.getElementById("btn-regresar").addEventListener("click", regresarAlCarrusel);
-  document.getElementById("cerrar-formulario").addEventListener("click", regresarAlCarrusel);
-  document.getElementById("logo-link").addEventListener("click", regresarAlCarrusel);
+  document
+    .getElementById("btn-regresar")
+    .addEventListener("click", regresarAlCarrusel);
+  document
+    .getElementById("cerrar-formulario")
+    .addEventListener("click", regresarAlCarrusel);
+  document
+    .getElementById("logo-link")
+    .addEventListener("click", regresarAlCarrusel);
 
   // FUNCIÓN PARA MOSTRAR Y OCULTAR EL FORMULARIO "SOLICITAR ACCESO"
-  document.getElementById("btn-solicitar").addEventListener("click", function () {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("form-solicitar-acceso").style.display = "block";
-  });
+  document
+    .getElementById("btn-solicitar")
+    .addEventListener("click", function () {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("form-solicitar-acceso").style.display = "block";
+    });
 
-  document.getElementById("cerrar-formulario").addEventListener("click", regresarAlCarrusel);
+  document
+    .getElementById("cerrar-formulario")
+    .addEventListener("click", regresarAlCarrusel);
 
   // FUNCIÓN PARA MOSTRAR EL LOGIN
   document
@@ -150,6 +160,29 @@ document.addEventListener("DOMContentLoaded", () => {
   fixVisibility();
   updateCarousel();
 
+  // ---------------------------
+  // 8. MOSTRAR/OCULTAR CONTRASEÑA (Corregido)
+  // ---------------------------
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener("click", function () {
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        this.src = "public/ojo-cerrado.svg"; // Cambia al icono de ojo cerrado
+      } else {
+        passwordInput.type = "password";
+        this.src = "public/ojo-abierto.svg"; // Cambia al icono de ojo abierto
+      }
+    });
+  } else {
+    console.error("No se encontró el elemento del input o el botón de cambio de contraseña.");
+  }
+  // ---------------------------
+  // 9. EVENTO PARA "¿Olvidaste tu contraseña?"
+  // ---------------------------
+ 
   // Agregar evento de click al logo
   document.getElementById("logo-link").addEventListener("click", function (e) {
     e.preventDefault(); // Evitar comportamiento por defecto del enlace
@@ -165,41 +198,50 @@ document.addEventListener("DOMContentLoaded", () => {
       loginSection.style.display = "none";
     }
   });
-    // FUNCIÓN PARA MOSTRAR Y OCULTAR EL FORMULARIO "SOLICITAR ACCESO"
-    document.getElementById("btn-solicitar").addEventListener("click", function () {
+  // FUNCIÓN PARA MOSTRAR Y OCULTAR EL FORMULARIO "SOLICITAR ACCESO"
+  document
+    .getElementById("btn-solicitar")
+    .addEventListener("click", function () {
       document.getElementById("login").style.display = "none";
       document.getElementById("form-solicitar-acceso").style.display = "block";
     });
-  
-    document.getElementById("cerrar-formulario").addEventListener("click", function () {
+
+  document
+    .getElementById("cerrar-formulario")
+    .addEventListener("click", function () {
       document.getElementById("form-solicitar-acceso").style.display = "none";
     });
-    
-  
-    // FUNCIÓN DE ENVÍO DEL FORMULARIO MEJORADA
-  document.getElementById("enviar-solicitud").addEventListener("click", function () {
-    const razonSocial = document.getElementById("razon-social").value.trim();
-    const nombre = document.getElementById("nombre").value.trim();
-    const telefono = document.getElementById("telefono").value.trim();
-    const email = document.getElementById("email-solicitud").value.trim();
 
-    if (!razonSocial || !nombre || !email) {
-      alert("Por favor, completa todos los campos antes de enviar.");
-      return;
-    }
+  // FUNCIÓN DE ENVÍO DEL FORMULARIO MEJORADA
+  document
+    .getElementById("enviar-solicitud")
+    .addEventListener("click", function () {
+      const razonSocial = document.getElementById("razon-social").value.trim();
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const email = document.getElementById("email-solicitud").value.trim();
 
-    alert("Solicitud enviada correctamente. Nos pondremos en contacto contigo.");
-    
-     // **Nuevo: Reiniciar el formulario**
-     document.querySelectorAll("#form-solicitar-acceso input").forEach(input => input.value = "");
-     
-    // **Nuevo: Esperar la confirmación del usuario y regresar al carrusel**
-    setTimeout(() => {
-      regresarAlCarrusel();
-    }, 200); // Se da un pequeño tiempo para que el alert se cierre antes de ejecutar
-  });
-  
-    window.addEventListener("resize", updateCarousel);
-    fixVisibility();
-    updateCarousel();
-  });
+      if (!razonSocial || !nombre || !email) {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return;
+      }
+
+      alert(
+        "Solicitud enviada correctamente. Nos pondremos en contacto contigo."
+      );
+
+      // **Nuevo: Reiniciar el formulario**
+      document
+        .querySelectorAll("#form-solicitar-acceso input")
+        .forEach((input) => (input.value = ""));
+
+      // **Nuevo: Esperar la confirmación del usuario y regresar al carrusel**
+      setTimeout(() => {
+        regresarAlCarrusel();
+      }, 200); // Se da un pequeño tiempo para que el alert se cierre antes de ejecutar
+    });
+
+  window.addEventListener("resize", updateCarousel);
+  fixVisibility();
+  updateCarousel();
+});
